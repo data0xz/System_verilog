@@ -1,0 +1,35 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/USER/Desktop/sv_check/classroom/operators
+vop
+DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+!s110 1728662192
+!i10b 1
+!s100 K^06E:79bUbEMGm?d<Ian3
+!s11b Dg1SIo80bB@j0V0VzS_@n1
+I=C_Ce6DOSaE=BRObd3c0N3
+VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1728662180
+8.\op.sv
+F.\op.sv
+!i122 13
+L0 1 38
+OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1728662192.000000
+!s107 .\op.sv|
+!s90 .\op.sv|
+!i113 1
+tCvgOpt 0

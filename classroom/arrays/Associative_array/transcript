@@ -1,0 +1,32 @@
+# vsim -c tb 
+# Start time: 00:23:14 on Oct 09,2024
+# Loading sv_std.std
+# Loading work.tb
+# asso_arr[102]=163
+# asso_arr[117]=175
+# asso_arr[144]=170
+# asso_arr[145]=158
+# asso_arr[168]=191
+# asso_arr[174]=173
+# asso_arr[191]=175
+# '{102:163, 117:175, 144:170, 145:158, 168:191, 174:173, 191:175 }
+# last index=191 with value=175
+# prev index=174 with value=173
+# prev index=168 with value=191
+# prev index=145 with value=158
+# prev index=144 with value=170
+# prev index=117 with value=175
+# prev index=102 with value=163
+# 
+# 
+# first index=102 with value=163
+# next index=117 with value=175
+# next index=144 with value=170
+# next index=145 with value=158
+# next index=168 with value=191
+# next index=174 with value=173
+# next index=191 with value=175
+# invalid command name "clear"
+# asso_array.sv  asso_array_1.sv  transcript  work    
+# End time: 15:02:02 on Oct 09,2024, Elapsed time: 14:38:48
+# Errors: 0, Warnings: 0

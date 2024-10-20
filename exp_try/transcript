@@ -1,0 +1,14 @@
+# vsim -c top 
+# Start time: 13:57:00 on Oct 18,2024
+# Loading sv_std.std
+# Loading work._17_10_24_sv_unit
+# Loading work.top
+# ** Fatal: (vsim-7099) Unable to check out a verification license for the randomize() feature.
+#    Time: 0 ps  Iteration: 0  Process: /top/#INITIAL#62 File: ./17_10_24.sv Line: 67
+# Fatal error in Module top at ./17_10_24.sv line 67
+# 
+# HDL call sequence:
+# Stopped at ./17_10_24.sv 67 Module top
+# 
+# End time: 19:39:12 on Oct 18,2024, Elapsed time: 5:42:12
+# Errors: 1, Warnings: 0

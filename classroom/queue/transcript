@@ -1,0 +1,6 @@
+# vsim -c tb 
+# Start time: 12:01:38 on Oct 16,2024
+# Loading sv_std.std
+# Loading work.stream_operator_sv_unit
+# Loading work.tb
+# '{1, 5, 3, 5, 2, 4, 12, 0, 8, 9, 5, 14, 8, 1, 0, 9, 15, 15, 15, 15, 11, 1, 15, 0, 5, 6, 6, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}

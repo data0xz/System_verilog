@@ -1,0 +1,9 @@
+# vsim -c op -sv_seed 4240980402 
+# Start time: 21:26:34 on Oct 11,2024
+# Loading sv_std.std
+# Loading work.op
+# a='{44, 40, 45, 43, 42} b='{12, 17, 14, 15, 13}
+# c=13 flag_match=2
+# c=13 flag_match=3
+# End time: 22:06:57 on Oct 11,2024, Elapsed time: 0:40:23
+# Errors: 0, Warnings: 0
