@@ -29,4 +29,4 @@ initial
 	$display("%p",tx);
 	$display("\n");
  end
-endmodule
+endmodule git config --global user.name "Your Name"
