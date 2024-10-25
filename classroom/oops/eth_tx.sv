@@ -53,6 +53,25 @@ endclass
 
 module top;
   eth_pckt pckt_1;
+  class eth_pkt;
+
+    //properties
+    protected bit[55:0] preamble;
+    protected bit[47:0] preamble;
+
+    protected bit[55:0] preamble;
+    
+    protected bit[55:0] preamble;
+
+
+
+
+
+
+
+  endclass
+
+
 
   initial 
     begin
