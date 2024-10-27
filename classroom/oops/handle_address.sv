@@ -6,9 +6,6 @@ class eth_pkt;
   rand  bit[7:0] a;
   rand  bit[2:0] b;
 
-
-
-
 endclass
 
 
@@ -82,6 +79,10 @@ task pkt_print(eth_pkt pkt_x,pkt_y);
   $display("\t%p",pkt_y);
 
 endtask
+
+
+//note: in vcs run options :  -xlrm hier_inst_seed 
+//+ntb_random_seed_automatic
 
 
 
