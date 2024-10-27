@@ -10,7 +10,7 @@ class eth_pkt;
   //properties
    protected 	bit[55:0] preamble;
 	 protected rand	bit[47:0] sa;
-	 protected rand	bit[7:0] len;
+	           rand	bit[7:0] len;
 	 protected rand	bit[7:0] payload[$];
 
 	 protected static int count;
@@ -80,8 +80,8 @@ module top;
   begin
     pkt_1=new();
     pkt_2=new();
-		assert(pkt_1.randomize());
-		assert(pkt_2.randomize());
+    assert(pkt_1.randomize() with {len == 6;});
+    assert(pkt_2.randomize() with {len == 6;});
 		pkt_1.print("pkt_1");
 		pkt_2.print("pkt_2");
 
