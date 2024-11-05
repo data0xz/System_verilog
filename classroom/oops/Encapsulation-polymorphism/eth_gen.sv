@@ -1,47 +1,55 @@
+//eth generator , put these packets in a mail box
+
 class eth_gen;
 
- //generate 10 random packets of good,bad,ill
+  //generate 10 random packets of good,bad,ill
 
- eth_good_pkt pkt_g;
- eth_bad_pkt  pkt_b;
- eth_ill_pkt  pkt_i;
+  eth_good_pkt pkt_g;
+  eth_bad_pkt  pkt_b;
+  eth_ill_pkt  pkt_i;
 
- bit[1:0] pkt_type;
+  bit[1:0] pkt_type;
 
- //generate packet
+  //generate packet
 
- task run();
-  
-	for (int i=0 ; i<10 ; i++)
-	 begin
+  task run();
 
-	    pkt_type=$urandom_range(0,2);
+    for (int i=0 ; i<10 ; i++)
+      begin
 
-			case(pkt_type)
-			 
-			 0: begin
-           pkt_g=new();
-					 assert(pkt_g.randomize());
-					 pkt_g.print("pkt_g");
-			    end
-					
+        pkt_type=$urandom_range(0,2);
 
-			 1: begin
-           pkt_b=new();
-					 assert(pkt_b.randomize());
-					 pkt_b.print("pkt_b");
-			    end
+        case(pkt_type)
+
+          0: 
+            begin
+              pkt_g=new();
+              assert(pkt_g.randomize());
+              eth_common::gen2bfm_mb.put(pkt_g);
+            end
 
 
-			 2: begin
-           pkt_i=new();
-					 assert(pkt_i.randomize());
-					 pkt_i.print("pkt_i");
-			    end
+          1:
+            begin
+              pkt_b=new();
+              assert(pkt_b.randomize());
+              eth_common::gen2bfm_mb.put(pkt_b);
+            end
 
-	 end
 
- endtask
+          2: 
+            begin
+              pkt_i=new();
+              assert(pkt_i.randomize());
+              eth_common::gen2bfm_mb.put(pkt_i);
+            end
+
+        endcase
+
+      end
+
+  endtask
 
 
 endclass
+
