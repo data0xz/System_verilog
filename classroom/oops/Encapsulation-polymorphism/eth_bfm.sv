@@ -1,7 +1,7 @@
 class eth_bfm;
 
 
-  eth_pkt pkt=new();
+  eth_pkt pkt;
 
   task run();
     repeat(10) begin
