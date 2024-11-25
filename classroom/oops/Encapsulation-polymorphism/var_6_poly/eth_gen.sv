@@ -8,50 +8,54 @@ class eth_gen;
   eth_bad_pkt  pkt_b;
   eth_ill_pkt  pkt_i;
 
-  bit[1:0] testcase;
+  bit[1:0] test;
   int num;
 
   //generate packet
 
   task run();
+  
+	case(testcase)
 
-    for (int i=0 ; i<10 ; i++)
-      begin
+	 "test_random_pkts":
 
-        testcase=num;
+           for (int i=0 ; i<10 ; i++)
+             begin
 
-        case(testcase)
+               test_num=$urandom_range(0,2);
 
-          1,3: 
-            begin
-              pkt_g=new();
-              assert(pkt_g.randomize());
-              eth_common::gen2bfm_mb.put(pkt_g);
-            end
+               case(test_num)
 
-
-          2:
-            begin
-              pkt_b=new();
-              assert(pkt_b.randomize());
-              eth_common::gen2bfm_mb.put(pkt_b);
-            end
+                 1,3: 
+                   begin
+                     pkt_g=new();
+                     assert(pkt_g.randomize());
+                     eth_common::gen2bfm_mb.put(pkt_g);
+                   end
 
 
-          0: 
-            begin
-              pkt_i=new();
-              assert(pkt_i.randomize());
-              eth_common::gen2bfm_mb.put(pkt_i);
-            end
-          
-          
-        endcase
-        
-        $display("testcase=%0d",testcase);
-        num++;
+                 2:
+                   begin
+                     pkt_b=new();
+                     assert(pkt_b.randomize());
+                     eth_common::gen2bfm_mb.put(pkt_b);
+                   end
 
-      end
+
+                 0: 
+                   begin
+                     pkt_i=new();
+                     assert(pkt_i.randomize());
+                     eth_common::gen2bfm_mb.put(pkt_i);
+                   end
+                 
+                 
+               endcase
+               
+               $display("testcase=%0d",testcase);
+               num++;
+
+             end
 
   endtask
 
