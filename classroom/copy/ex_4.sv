@@ -59,7 +59,7 @@ module tb;
 
 
 
-      pkt_1.copy(pkt_2); //deep copy
+      pkt_1.copy(pkt_2); //deep copy imp 1
 
       n();
       $display("\t****after_copy pkt_1=pkt_2***");
