@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 
+=======
+// Code your testbench here
+// or browse Examples
+>>>>>>> 3e3499944f1b0f3f47641e6cd57e03d5364acf07
 class sample;
 
   int count;
@@ -16,7 +21,12 @@ class eth_pkt;
     pkt=new();
     pkt.a=this.a;
     pkt.b=this.b;
+<<<<<<< HEAD
     
+=======
+
+    pkt.s_o=new();
+>>>>>>> 3e3499944f1b0f3f47641e6cd57e03d5364acf07
     pkt.s_o.count=this.s_o.count;
 
   endfunction
@@ -28,6 +38,7 @@ endclass
 
 module tb;
 
+<<<<<<< HEAD
   eth_pkt pkt_1=new(),pkt_2=new();
 
   initial
@@ -99,6 +110,8 @@ endmodule
 
 module tb;
 
+=======
+>>>>>>> 3e3499944f1b0f3f47641e6cd57e03d5364acf07
   eth_pkt pkt_1,pkt_2;
 
   initial
