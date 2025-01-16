@@ -13,17 +13,12 @@ endclass
 
 class sample;
 
-  rand int a;
-  rand int b;
+  randc bit[1:0] a;
+  randc bit[1:0] b;
 
   rand my_pkt pkt=new();
-
-  //constraint
-
-  constraint c_1{
-    a   inside {[10:50]};
-    b   inside {[70:100]};   
-  }
+   
+ 
 
   //method
 
@@ -46,9 +41,10 @@ module tb;
   initial
     begin
 
-      repeat(5)
+      s1=new();
+      
+      repeat(4)
         begin
-          s1=new();
           assert(s1.randomize());
           s1.print("s1");
           $display("\n");
