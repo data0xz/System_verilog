@@ -1,82 +1,68 @@
-// Code your testbench here
-// or browse Examples
+class my_pkt;
+
+  rand int count;
+  rand int count_1;
+
+  constraint c{
+    count   inside {[200:300]};
+    count_1 inside {[300:400]};   
+  }
+
+endclass
+
 
 class sample;
 
-  rand int count_1;
-  rand int count_2;
+  rand int a;
+  rand int b;
 
-  constraint c{
+  rand my_pkt pkt=new();
 
-    count_1 inside {[200:300]};
-    count_2 inside {[300:400]};                     
-  };
+  //constraint
 
-endclass
+  constraint c_1{
+    a   inside {[10:50]};
+    b   inside {[70:100]};   
+  }
 
-class sample_1;
+  //method
 
-  rand int count_3;
-  rand int count_4;
+  function void print(string name="sample_default");
+    $display("\n printing %s fields",name);
+    $display("\t a=%0d",a);
+    $display("\t b=%0d",b);
+    $display("\t pkt=%p",pkt);   
+  endfunction
 
-  constraint c{
-
-    count_3 inside {[400:500]};
-    count_4 inside {[500:600]}; 
-  };
-
-endclass
-
-class eth_pkt;
-
-  rand int count_5;
-  rand int count_6;
-
-  sample     s=new(); // rand
-  sample_1 s_1=new(); //not rand
 
 endclass
 
-module top;
 
-  eth_pkt pkt_1=new(),pkt_2=new();
+module tb;
 
+  sample s1,s2;
   mailbox mbox=new();
 
   initial
     begin
 
-      repeat(3)
+      repeat(5)
         begin
-
-          
-          assert(pkt_1.randomize() with {count_5>0;count_5<50;count_6>0;count_6<50;});
-
-          assert(pkt_2.randomize() with {count_5>50;count_5<100;count_6>50;count_6<100;});
-
-          $display("pkt_1=%p",pkt_1);
-          $display("pkt_2=%p",pkt_2);
-
-          assert(pkt_1.s.randomize());
-          assert(pkt_1.s_1.randomize());
-
-          assert(pkt_2.s.randomize());
-          assert(pkt_2.s_1.randomize());
-
-
-          $display("pkt_1.s=%p",pkt_1.s);
-          $display("pkt_1.s_1=%p",pkt_1.s_1);
-
-          $display("pkt_2.s=%p",pkt_2.s);
-          $display("pkt_2.s_1=%p",pkt_2.s_1);
-
+          s1=new();
+          assert(s1.randomize());
+          s1.print("s1");
           $display("\n");
-          
-
-          
-          
+          mbox.put(s1);
         end
+
+      repeat(4)
+        begin
+          mbox.get(s2);
+          s2.print("s2");
+          $display("\n");
+        end
+
     end
 
-endmodule
 
+endmodule
